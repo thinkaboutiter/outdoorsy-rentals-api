@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "simplelogger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/thinkaboutiter/SimpleLogger.git",
+      "state" : {
+        "revision" : "6b6f4c6fe99df50f8605bf1bca2ee9aa12d01cfa",
+        "version" : "2.4.5"
+      }
+    }
+  ],
+  "version" : 2
+}
