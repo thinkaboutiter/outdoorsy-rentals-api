@@ -17,6 +17,9 @@
 		4F9310E92ACD51D000D7D581 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9310E72ACD51D000D7D581 /* RootViewController.xib */; };
 		4F9310EC2ACD52B800D7D581 /* SimpleLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 4F9310EB2ACD52B800D7D581 /* SimpleLogger */; };
 		4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310ED2ACD52DF00D7D581 /* RootViewModel.swift */; };
+		4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */; };
+		4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */; };
+		4F9310F72ACD6D3C00D7D581 /* RentalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		4F9310E62ACD51D000D7D581 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4F9310E72ACD51D000D7D581 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		4F9310ED2ACD52DF00D7D581 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewController.swift; sourceTree = "<group>"; };
+		4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewModel.swift; sourceTree = "<group>"; };
+		4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,7 @@
 		4F9310E42ACD514100D7D581 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				4F9310F12ACD6C6700D7D581 /* rentals */,
 				4F9310E52ACD515D00D7D581 /* root */,
 			);
 			path = screens;
@@ -191,6 +198,16 @@
 				4F9310ED2ACD52DF00D7D581 /* RootViewModel.swift */,
 			);
 			path = root;
+			sourceTree = "<group>";
+		};
+		4F9310F12ACD6C6700D7D581 /* rentals */ = {
+			isa = PBXGroup;
+			children = (
+				4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */,
+				4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */,
+				4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */,
+			);
+			path = rentals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +322,7 @@
 			files = (
 				4F9310BB2ACD4CF300D7D581 /* LaunchScreen.storyboard in Resources */,
 				4F9310B82ACD4CF300D7D581 /* Assets.xcassets in Resources */,
+				4F9310F72ACD6D3C00D7D581 /* RentalsViewController.xib in Resources */,
 				4F9310E92ACD51D000D7D581 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +350,8 @@
 			files = (
 				4F9310AF2ACD4CF000D7D581 /* AppDelegate.swift in Sources */,
 				4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */,
+				4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */,
+				4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
