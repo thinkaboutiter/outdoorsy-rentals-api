@@ -12,6 +12,14 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 
     // MARK: - Properties
     private let viewModel: RentalsViewModel
+    private lazy var searchController: UISearchController = {
+        let result: UISearchController = UISearchController(searchResultsController: nil)
+        result.searchResultsUpdater = self
+        result.obscuresBackgroundDuringPresentation = false
+        result.searchBar.placeholder = NSLocalizedString("Search for a trailer", comment: "Search for a trailer")
+        result.delegate = self
+        return result
+    }()
 
     // MARK: - Initialization
     @available(*, unavailable, message: "Not supported!")
@@ -40,7 +48,54 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        configureSearchBar()
+    }
 
-        // Do any additional setup after loading the view.
+    private func configureUI() {
+        self.title = NSLocalizedString("Keyword search", comment: "Keyword search")
+    }
+
+    private func configureSearchBar() {
+        self.navigationItem.searchController = self.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+}
+
+// MARK: - UISearchControllerDelegate protocol
+extension RentalsViewController: UISearchControllerDelegate {
+
+    func willPresentSearchController(_ searchController: UISearchController) {
+        // TODO:
+        /**
+         1. Raise flag on ViewModel that we are displaying search term
+         2. Reload data
+         */
+    }
+
+    func willDismissSearchController(_ searchController: UISearchController) {
+        // TODO:
+        /**
+         1. Drop flag on ViewModel that we are displaying search term
+         2. Reload data
+         */
+    }
+}
+
+// MARK: - UISearchResultsUpdating protocol
+extension RentalsViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchTerm: String = searchController.searchBar.text else {
+            let error = AppError.invalidSearchBarTextObject
+            Logger.error.message().object(error)
+            return
+        }
+
+        // TODO:
+        /**
+         1. Update search term on ViewModel
+         2. Reload data
+         */
     }
 }

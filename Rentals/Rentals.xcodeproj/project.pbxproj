@@ -23,6 +23,7 @@
 		4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */; };
 		4F9310FC2AD0140800D7D581 /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310FB2AD0140800D7D581 /* RootViewControllerFactory.swift */; };
 		4F9310FE2AD0147B00D7D581 /* RentalsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310FD2AD0147B00D7D581 /* RentalsViewControllerFactory.swift */; };
+		4F9311012AD01A3B00D7D581 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9311002AD01A3B00D7D581 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		4F9310FB2AD0140800D7D581 /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
 		4F9310FD2AD0147B00D7D581 /* RentalsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewControllerFactory.swift; sourceTree = "<group>"; };
+		4F9311002AD01A3B00D7D581 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				4F9310E22ACD50CC00D7D581 /* domain */,
 				4F9310F82AD00F4A00D7D581 /* extensions */,
 				4F9310E12ACD50C400D7D581 /* presentation */,
+				4F9310FF2AD01A2B00D7D581 /* utilities */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -225,6 +228,14 @@
 				4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		4F9310FF2AD01A2B00D7D581 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4F9311002AD01A3B00D7D581 /* AppError.swift */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 				4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */,
 				4F9310FC2AD0140800D7D581 /* RootViewControllerFactory.swift in Sources */,
 				4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */,
+				4F9311012AD01A3B00D7D581 /* AppError.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
