@@ -20,6 +20,7 @@
 		4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */; };
 		4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */; };
 		4F9310F72ACD6D3C00D7D581 /* RentalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */; };
+		4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewController.swift; sourceTree = "<group>"; };
 		4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewModel.swift; sourceTree = "<group>"; };
 		4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalsViewController.xib; sourceTree = "<group>"; };
+		4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				4F9310AE2ACD4CF000D7D581 /* AppDelegate.swift */,
 				4F9310E32ACD50D300D7D581 /* data */,
 				4F9310E22ACD50CC00D7D581 /* domain */,
+				4F9310F82AD00F4A00D7D581 /* extensions */,
 				4F9310E12ACD50C400D7D581 /* presentation */,
 			);
 			path = source;
@@ -208,6 +211,14 @@
 				4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */,
 			);
 			path = rentals;
+			sourceTree = "<group>";
+		};
+		4F9310F82AD00F4A00D7D581 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F9310F92AD00F6E00D7D581 /* UIViewController+extensions.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */,
 				4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */,
 				4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */,
+				4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
