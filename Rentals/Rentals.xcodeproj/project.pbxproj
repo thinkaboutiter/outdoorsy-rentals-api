@@ -24,6 +24,9 @@
 		4F9310FC2AD0140800D7D581 /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310FB2AD0140800D7D581 /* RootViewControllerFactory.swift */; };
 		4F9310FE2AD0147B00D7D581 /* RentalsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9310FD2AD0147B00D7D581 /* RentalsViewControllerFactory.swift */; };
 		4F9311012AD01A3B00D7D581 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9311002AD01A3B00D7D581 /* AppError.swift */; };
+		4F9311042AD02F9800D7D581 /* RentalsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9311032AD02F9800D7D581 /* RentalsCollectionView.swift */; };
+		4F9311062AD031F400D7D581 /* RentalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9311052AD031F400D7D581 /* RentalCollectionViewCell.swift */; };
+		4F9311082AD0325E00D7D581 /* RentalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9311072AD0325E00D7D581 /* RentalCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		4F9310FB2AD0140800D7D581 /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
 		4F9310FD2AD0147B00D7D581 /* RentalsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsViewControllerFactory.swift; sourceTree = "<group>"; };
 		4F9311002AD01A3B00D7D581 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		4F9311032AD02F9800D7D581 /* RentalsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsCollectionView.swift; sourceTree = "<group>"; };
+		4F9311052AD031F400D7D581 /* RentalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F9311072AD0325E00D7D581 /* RentalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 		4F9310F12ACD6C6700D7D581 /* rentals */ = {
 			isa = PBXGroup;
 			children = (
+				4F9311022AD0231600D7D581 /* custom-ui */,
 				4F9310F22ACD6C8100D7D581 /* RentalsViewController.swift */,
 				4F9310F62ACD6D3C00D7D581 /* RentalsViewController.xib */,
 				4F9310F42ACD6C9000D7D581 /* RentalsViewModel.swift */,
@@ -236,6 +243,16 @@
 				4F9311002AD01A3B00D7D581 /* AppError.swift */,
 			);
 			path = utilities;
+			sourceTree = "<group>";
+		};
+		4F9311022AD0231600D7D581 /* custom-ui */ = {
+			isa = PBXGroup;
+			children = (
+				4F9311032AD02F9800D7D581 /* RentalsCollectionView.swift */,
+				4F9311052AD031F400D7D581 /* RentalCollectionViewCell.swift */,
+				4F9311072AD0325E00D7D581 /* RentalCollectionViewCell.xib */,
+			);
+			path = "custom-ui";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F9311082AD0325E00D7D581 /* RentalCollectionViewCell.xib in Resources */,
 				4F9310BB2ACD4CF300D7D581 /* LaunchScreen.storyboard in Resources */,
 				4F9310B82ACD4CF300D7D581 /* Assets.xcassets in Resources */,
 				4F9310F72ACD6D3C00D7D581 /* RentalsViewController.xib in Resources */,
@@ -378,12 +396,14 @@
 			files = (
 				4F9310AF2ACD4CF000D7D581 /* AppDelegate.swift in Sources */,
 				4F9310FE2AD0147B00D7D581 /* RentalsViewControllerFactory.swift in Sources */,
+				4F9311042AD02F9800D7D581 /* RentalsCollectionView.swift in Sources */,
 				4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */,
 				4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */,
 				4F9310F32ACD6C8100D7D581 /* RentalsViewController.swift in Sources */,
 				4F9310FC2AD0140800D7D581 /* RootViewControllerFactory.swift in Sources */,
 				4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */,
 				4F9311012AD01A3B00D7D581 /* AppError.swift in Sources */,
+				4F9311062AD031F400D7D581 /* RentalCollectionViewCell.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

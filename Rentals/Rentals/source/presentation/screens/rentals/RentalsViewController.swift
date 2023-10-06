@@ -12,6 +12,7 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 
     // MARK: - Properties
     private let viewModel: RentalsViewModel
+    @IBOutlet private weak var rentalsCollectionView: RentalsCollectionView!
     private lazy var searchController: UISearchController = {
         let result: UISearchController = UISearchController(searchResultsController: nil)
         result.searchResultsUpdater = self
