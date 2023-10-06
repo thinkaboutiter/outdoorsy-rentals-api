@@ -8,11 +8,6 @@
 import UIKit
 import SimpleLogger
 
-    /// APIs for `DependecyContainer` to expose.
-protocol RentalsViewControllerFactory {
-    func makeRentalsViewController() -> RentalsViewController
-}
-
 class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 
     // MARK: - Properties

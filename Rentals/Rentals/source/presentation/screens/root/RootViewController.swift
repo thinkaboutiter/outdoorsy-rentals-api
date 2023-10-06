@@ -9,12 +9,7 @@ import UIKit
 import UIKit
 import SimpleLogger
 
-    /// APIs for `DependecyContainer` to expose.
-protocol RootViewControllerFactory: AnyObject {
-    func makeRootViewController() -> RootViewController
-}
-
-class RootViewController: UIViewController, RootViewModelConsumer {
+class RootViewController: UIViewController {
 
     // MARK: - Properties
     private let viewModel: RootViewModel
@@ -33,7 +28,6 @@ class RootViewController: UIViewController, RootViewModelConsumer {
     init(viewModel: RootViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
-        self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
     }
 
@@ -41,24 +35,25 @@ class RootViewController: UIViewController, RootViewModelConsumer {
         Logger.fatal.message()
     }
 
-    // MARK: - RootViewModelConsumer protocol
-
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            // Do any additional setup after loading the view.
+        embedRentalsViewController()
     }
 }
 
-
-class RootViewControllerFactoryImpl: RootViewControllerFactory {
-
-    init() {}
-
-    func makeRootViewController() -> RootViewController {
-        let vm: RootViewModel = RootViewModelImpl()
-        let vc = RootViewController(viewModel: vm)
-        return vc
+extension RootViewController {
+    private func embedRentalsViewController() {
+        let vc = viewModel.rentalsViewControllerFactory.makeRentalsViewController()
+        let nc = UINavigationController()
+        nc.pushViewController(vc, animated: false)
+        do {
+            try self.embed(nc,
+                           containerView: self.view,
+                           positionChildViewIntoContainerView: nil)
+        } catch {
+            Logger.error.message().object(error)
+        }
     }
 }
+

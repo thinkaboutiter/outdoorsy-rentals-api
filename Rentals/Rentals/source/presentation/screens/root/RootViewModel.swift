@@ -8,32 +8,23 @@
 import Foundation
 import SimpleLogger
 
-/// APIs for `View` to expose to `ViewModel`
-protocol RootViewModelConsumer: AnyObject {}
-
 /// APIs for `ViewModel` to expose to `View`
 protocol RootViewModel: AnyObject {
-    func setViewModelConsumer(_ newValue: RootViewModelConsumer?)
+    var rentalsViewControllerFactory: RentalsViewControllerFactory { get }
 }
 
 class RootViewModelImpl: RootViewModel {
 
     // MARK: - Properties
-    private weak var viewModelConsumer: RootViewModelConsumer?
+    private(set) var rentalsViewControllerFactory: RentalsViewControllerFactory
 
     // MARK: - Initialization
-    init() {
+    init(rentalsViewControllerFactory: RentalsViewControllerFactory) {
+        self.rentalsViewControllerFactory = rentalsViewControllerFactory
         Logger.success.message()
     }
 
     deinit {
         Logger.fatal.message()
     }
-
-    // MARK: - RootViewModel protocol
-    func setViewModelConsumer(_ newValue: RootViewModelConsumer?) {
-        self.viewModelConsumer = newValue
-    }
-
-    // MARK: - RootModelConsumer protocol
 }
