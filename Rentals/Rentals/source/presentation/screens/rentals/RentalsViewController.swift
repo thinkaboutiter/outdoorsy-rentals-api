@@ -12,7 +12,15 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 
     // MARK: - Properties
     private let viewModel: RentalsViewModel
-    @IBOutlet private weak var rentalsCollectionView: RentalsCollectionView!
+    @IBOutlet private weak var rentalsCollectionView: RentalsCollectionView! {
+        didSet {
+            let identifier = RentalCollectionViewCell.identifier
+            rentalsCollectionView.register(UINib(nibName: identifier, bundle: nil),
+                                           forCellWithReuseIdentifier: identifier)
+            rentalsCollectionView.delegate = self
+            rentalsCollectionView.dataSource = self
+        }
+    }
     private lazy var searchController: UISearchController = {
         let result: UISearchController = UISearchController(searchResultsController: nil)
         result.searchResultsUpdater = self
@@ -67,19 +75,13 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 extension RentalsViewController: UISearchControllerDelegate {
 
     func willPresentSearchController(_ searchController: UISearchController) {
-        // TODO:
-        /**
-         1. Raise flag on ViewModel that we are displaying search term
-         2. Reload data
-         */
+        viewModel.setDisplayingSearchResults(true)
+        rentalsCollectionView.reloadData()
     }
 
     func willDismissSearchController(_ searchController: UISearchController) {
-        // TODO:
-        /**
-         1. Drop flag on ViewModel that we are displaying search term
-         2. Reload data
-         */
+        viewModel.setDisplayingSearchResults(false)
+        rentalsCollectionView.reloadData()
     }
 }
 
@@ -92,11 +94,108 @@ extension RentalsViewController: UISearchResultsUpdating {
             Logger.error.message().object(error)
             return
         }
+        viewModel.setSearchTerm(searchTerm)
+        rentalsCollectionView.reloadData()
+    }
+}
 
-        // TODO:
-        /**
-         1. Update search term on ViewModel
-         2. Reload data
-         */
+extension RentalsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.items().count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = RentalCollectionViewCell.identifier
+        guard let cell: RentalCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? RentalCollectionViewCell else {
+            let message: String = "Unable to dequeue valid \(identifier)!"
+            Logger.error.message(message)
+            fatalError(message)
+        }
+        guard let data = viewModel.item(at: indexPath) else {
+            let message: String = "Unable to find item for indexPath=\(indexPath)!"
+            Logger.error.message(message)
+            return cell
+        }
+        cell.configureWithRentalDescription(data)
+        let testImage = UIImage(named: "test-rv")
+        cell.configureWithRentalImage(testImage)
+        return cell
+    }
+}
+
+extension RentalsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+extension RentalsViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return self.itemSize(for: collectionView, at: indexPath)
+    }
+
+    private func itemSize(for collectionView: UICollectionView, at indexPath: IndexPath) -> CGSize {
+        guard let provider: CollectionViewDimensionsProvider = collectionView as? CollectionViewDimensionsProvider else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            debugPrint("❌ \(#file) » \(#function) » \(#line)", message, separator: "\n")
+            return CGSize.zero
+        }
+        let result: CGSize = self.itemSize(for: provider,
+                                           totalWidth: collectionView.bounds.width)
+        return result
+    }
+
+    private func itemSize(for provider: CollectionViewDimensionsProvider,
+                          totalWidth: CGFloat) -> CGSize
+    {
+        let item_width: CGFloat = (
+            totalWidth
+                - provider.paddingLeft
+                - provider.paddingRight
+                - CGFloat(provider.itemsPerRow - 1) * provider.minimumInteritemSpacing
+            ) / CGFloat(provider.itemsPerRow)
+
+        let item_height: CGFloat = item_width / provider.itemWidthToHeightRatio
+        return CGSize(width: item_width, height: item_height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        guard let valid_dimensionsProvider: CollectionViewDimensionsProvider = collectionView as? CollectionViewDimensionsProvider else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            debugPrint("❌ \(#file) » \(#function) » \(#line)", message, separator: "\n")
+            return UIEdgeInsets.zero
+        }
+        return valid_dimensionsProvider.sectionEdgeInsets
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        guard let valid_dimensionsProvider: CollectionViewDimensionsProvider = collectionView as? CollectionViewDimensionsProvider else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            debugPrint("❌ \(#file) » \(#function) » \(#line)", message, separator: "\n")
+            return 0
+        }
+        return valid_dimensionsProvider.minimumInteritemSpacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        guard let valid_dimensionsProvider: CollectionViewDimensionsProvider = collectionView as? CollectionViewDimensionsProvider else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            debugPrint("❌ \(#file) » \(#function) » \(#line)", message, separator: "\n")
+            return 0
+        }
+        return valid_dimensionsProvider.minimumLineSpacing
     }
 }
