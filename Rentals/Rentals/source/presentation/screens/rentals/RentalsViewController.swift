@@ -59,6 +59,19 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
         super.viewDidLoad()
         configureUI()
         configureSearchBar()
+
+        checkWebService()
+    }
+
+    private let ws = RentalsWebService()
+
+    private func checkWebService() {
+        ws.fetch { resources in
+            Logger.network.message().object(resources)
+        } failure: { error in
+            Logger.error.message().object(error)
+        }
+
     }
 
     private func configureUI() {

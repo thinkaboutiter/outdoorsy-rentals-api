@@ -33,6 +33,9 @@
 		4F999EA12AD6AA6E006AFAEC /* WebServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */; };
 		4F999EA32AD6ACC0006AFAEC /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */; };
 		4F999EA52AD6B287006AFAEC /* Rentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA42AD6B287006AFAEC /* Rentals.swift */; };
+		4F999EA72AD6B5F3006AFAEC /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA62AD6B5F3006AFAEC /* WebService.swift */; };
+		4F999EA92AD6B627006AFAEC /* BaseWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA82AD6B627006AFAEC /* BaseWebService.swift */; };
+		4F999EAB2AD6BADE006AFAEC /* RentalsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EAA2AD6BADE006AFAEC /* RentalsWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConstants.swift; sourceTree = "<group>"; };
 		4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
 		4F999EA42AD6B287006AFAEC /* Rentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rentals.swift; sourceTree = "<group>"; };
+		4F999EA62AD6B5F3006AFAEC /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		4F999EA82AD6B627006AFAEC /* BaseWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebService.swift; sourceTree = "<group>"; };
+		4F999EAA2AD6BADE006AFAEC /* RentalsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +282,9 @@
 			children = (
 				4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */,
 				4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */,
+				4F999EA62AD6B5F3006AFAEC /* WebService.swift */,
+				4F999EA82AD6B627006AFAEC /* BaseWebService.swift */,
+				4F999EAA2AD6BADE006AFAEC /* RentalsWebService.swift */,
 			);
 			path = networking;
 			sourceTree = "<group>";
@@ -425,6 +434,8 @@
 				4F999EA52AD6B287006AFAEC /* Rentals.swift in Sources */,
 				4F9310FE2AD0147B00D7D581 /* RentalsViewControllerFactory.swift in Sources */,
 				4F9311042AD02F9800D7D581 /* RentalsCollectionView.swift in Sources */,
+				4F999EA72AD6B5F3006AFAEC /* WebService.swift in Sources */,
+				4F999EAB2AD6BADE006AFAEC /* RentalsWebService.swift in Sources */,
 				4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */,
 				4F9310F52ACD6C9000D7D581 /* RentalsViewModel.swift in Sources */,
 				4F999E9B2AD69C03006AFAEC /* UIView+extensions.swift in Sources */,
@@ -435,6 +446,7 @@
 				4F999EA32AD6ACC0006AFAEC /* WebServiceError.swift in Sources */,
 				4F999EA12AD6AA6E006AFAEC /* WebServiceConstants.swift in Sources */,
 				4F9311062AD031F400D7D581 /* RentalCollectionViewCell.swift in Sources */,
+				4F999EA92AD6B627006AFAEC /* BaseWebService.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 				4F999E992AD69242006AFAEC /* Array+extensions.swift in Sources */,
 			);

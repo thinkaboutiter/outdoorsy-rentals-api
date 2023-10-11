@@ -28,6 +28,7 @@ enum WebServiceConstants {
         case currency
         case filter_excluded_type = "filter[exclude_type]"
         case geoip_address
+        case locale
         case page_limit = "page[limit]"
         case page_offset = "page[offset]"
         case suggested
