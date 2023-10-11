@@ -75,19 +75,13 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
 extension RentalsViewController: UISearchControllerDelegate {
 
     func willPresentSearchController(_ searchController: UISearchController) {
-        // TODO:
-        /**
-         1. Raise flag on ViewModel that we are displaying search term
-         2. Reload data
-         */
+        viewModel.setDisplayingSearchResults(true)
+        rentalsCollectionView.reloadData()
     }
 
     func willDismissSearchController(_ searchController: UISearchController) {
-        // TODO:
-        /**
-         1. Drop flag on ViewModel that we are displaying search term
-         2. Reload data
-         */
+        viewModel.setDisplayingSearchResults(false)
+        rentalsCollectionView.reloadData()
     }
 }
 
@@ -100,12 +94,8 @@ extension RentalsViewController: UISearchResultsUpdating {
             Logger.error.message().object(error)
             return
         }
-
-        // TODO:
-        /**
-         1. Update search term on ViewModel
-         2. Reload data
-         */
+        viewModel.setSearchTerm(searchTerm)
+        rentalsCollectionView.reloadData()
     }
 }
 

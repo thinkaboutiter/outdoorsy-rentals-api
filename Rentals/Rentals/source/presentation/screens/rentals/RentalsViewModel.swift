@@ -11,8 +11,16 @@ import SimpleLogger
 /// APIs for `View` to expose to `ViewModel`
 protocol RentalsViewModelConsumer: AnyObject {}
 
+protocol SearchRentalsViewModel: AnyObject {
+    func isDisplayingSearchResults() -> Bool
+    func setDisplayingSearchResults(_ newValue: Bool)
+    func getSearchTerm() -> String
+    func setSearchTerm(_ newValue: String)
+    func filteredItems(by term: String) -> [String]
+}
+
 /// APIs for `ViewModel` to expose to `View`
-protocol RentalsViewModel: AnyObject {
+protocol RentalsViewModel: SearchRentalsViewModel {
     func setViewModelConsumer(_ newValue: RentalsViewModelConsumer?)
     func items() -> [String]
     func item(at indexPath: IndexPath) -> String?
@@ -22,6 +30,16 @@ class RentalsViewModelImpl: RentalsViewModel {
 
     // MARK: - Properties
     private weak var viewModelConsumer: RentalsViewModelConsumer?
+    private var displayingSearchResults: Bool = false
+    private var searchTerm: String = ""
+    private let testData: [String] = {
+        var result = [String]()
+        for i in 1...40 {
+            let item = "rental \(i)"
+            result.append(item)
+        }
+        return result
+    }()
 
     // MARK: - Initialization
     init() {
@@ -38,12 +56,13 @@ class RentalsViewModelImpl: RentalsViewModel {
     }
 
     func items() -> [String] {
-        let result = [
-            "rental 1",
-            "rental 2",
-            "rental 3",
-            "retnal 4"
-        ]
+        let result: [String]
+        if isDisplayingSearchResults() {
+            let term = getSearchTerm()
+            result = filteredItems(by: term)
+        } else {
+            result = testData
+        }
         return result
     }
 
@@ -54,5 +73,27 @@ class RentalsViewModelImpl: RentalsViewModel {
         return result
     }
 
-    // MARK: - RentalsModelConsumer protocol
+    // MARK: - SearchRentalsViewModel protocol
+    func isDisplayingSearchResults() -> Bool {
+        return displayingSearchResults
+    }
+
+    func setDisplayingSearchResults(_ newValue: Bool) {
+        displayingSearchResults = newValue
+    }
+
+    func getSearchTerm() -> String {
+        return searchTerm
+    }
+
+    func setSearchTerm(_ newValue: String) {
+        searchTerm = newValue
+    }
+
+    func filteredItems(by term: String) -> [String] {
+        let result = testData.filter { element in
+            element.lowercased().contains(term.lowercased())
+        }
+        return result
+    }
 }
