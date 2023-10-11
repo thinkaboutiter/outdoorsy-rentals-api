@@ -24,9 +24,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="223.33333333333334" height="242"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-8w-WEe" userLabel="rental-image-view">
-                                        <rect key="frame" x="5" y="61" width="213.33333333333334" height="120"/>
+                                        <rect key="frame" x="5" y="49" width="213.33333333333334" height="144"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="eNZ-8w-WEe" secondAttribute="height" multiplier="16:9" id="T4k-0R-vkq"/>
+                                            <constraint firstAttribute="width" secondItem="eNZ-8w-WEe" secondAttribute="height" multiplier="200:135" id="T4k-0R-vkq"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="223.33333333333334" y="0.0" width="334.66666666666663" height="242"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-1h-lXa" userLabel="rental-description-label">
-                                        <rect key="frame" x="8" y="8" width="318.66666666666669" height="226"/>
+                                        <rect key="frame" x="16" y="0.0" width="318.66666666666669" height="242"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,10 +51,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="g6Z-1h-lXa" secondAttribute="bottom" constant="8" id="4ri-Zl-pXi"/>
-                                    <constraint firstAttribute="trailing" secondItem="g6Z-1h-lXa" secondAttribute="trailing" constant="8" id="5Vo-o9-RBP"/>
-                                    <constraint firstItem="g6Z-1h-lXa" firstAttribute="leading" secondItem="pTK-cK-ruZ" secondAttribute="leading" constant="8" id="VtH-1N-kaG"/>
-                                    <constraint firstItem="g6Z-1h-lXa" firstAttribute="top" secondItem="pTK-cK-ruZ" secondAttribute="top" constant="8" id="l8W-FY-d9c"/>
+                                    <constraint firstAttribute="bottom" secondItem="g6Z-1h-lXa" secondAttribute="bottom" id="4ri-Zl-pXi"/>
+                                    <constraint firstAttribute="trailing" secondItem="g6Z-1h-lXa" secondAttribute="trailing" id="5Vo-o9-RBP"/>
+                                    <constraint firstItem="g6Z-1h-lXa" firstAttribute="leading" secondItem="pTK-cK-ruZ" secondAttribute="leading" constant="16" id="VtH-1N-kaG"/>
+                                    <constraint firstItem="g6Z-1h-lXa" firstAttribute="top" secondItem="pTK-cK-ruZ" secondAttribute="top" id="l8W-FY-d9c"/>
                                 </constraints>
                             </view>
                         </subviews>

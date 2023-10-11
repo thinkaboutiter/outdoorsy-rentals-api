@@ -16,6 +16,12 @@ class RentalCollectionViewCell: UICollectionViewCell {
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
+    }
+
+    private func configureUI() {
+        rentalImageView.round(cornerRadius: 4)
+        rentalImageView.contentMode = .scaleAspectFill
     }
 
     override func prepareForReuse() {
@@ -26,11 +32,11 @@ class RentalCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
     }
 
-    func configure(with rentalDescription: String) {
+    func configureWithRentalDescription(_ rentalDescription: String) {
         rentalDescriptionLabel.text = rentalDescription
     }
 
-    func configure(with rentalImage: UIImage) {
+    func configureWithRentalImage(_ rentalImage: UIImage?) {
         rentalImageView.image = rentalImage
     }
 }
