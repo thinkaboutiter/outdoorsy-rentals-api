@@ -32,6 +32,7 @@
 		4F999E9E2AD6A951006AFAEC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F999E9D2AD6A951006AFAEC /* Alamofire */; };
 		4F999EA12AD6AA6E006AFAEC /* WebServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */; };
 		4F999EA32AD6ACC0006AFAEC /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */; };
+		4F999EA52AD6B287006AFAEC /* Rentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA42AD6B287006AFAEC /* Rentals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		4F999E9A2AD69C03006AFAEC /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConstants.swift; sourceTree = "<group>"; };
 		4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
+		4F999EA42AD6B287006AFAEC /* Rentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rentals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		4F9310E22ACD50CC00D7D581 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				4F999EA42AD6B287006AFAEC /* Rentals.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9310AF2ACD4CF000D7D581 /* AppDelegate.swift in Sources */,
+				4F999EA52AD6B287006AFAEC /* Rentals.swift in Sources */,
 				4F9310FE2AD0147B00D7D581 /* RentalsViewControllerFactory.swift in Sources */,
 				4F9311042AD02F9800D7D581 /* RentalsCollectionView.swift in Sources */,
 				4F9310EE2ACD52DF00D7D581 /* RootViewModel.swift in Sources */,
