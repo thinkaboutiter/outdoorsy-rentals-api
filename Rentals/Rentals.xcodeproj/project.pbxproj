@@ -29,6 +29,9 @@
 		4F9311082AD0325E00D7D581 /* RentalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9311072AD0325E00D7D581 /* RentalCollectionViewCell.xib */; };
 		4F999E992AD69242006AFAEC /* Array+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999E982AD69242006AFAEC /* Array+extensions.swift */; };
 		4F999E9B2AD69C03006AFAEC /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999E9A2AD69C03006AFAEC /* UIView+extensions.swift */; };
+		4F999E9E2AD6A951006AFAEC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F999E9D2AD6A951006AFAEC /* Alamofire */; };
+		4F999EA12AD6AA6E006AFAEC /* WebServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */; };
+		4F999EA32AD6ACC0006AFAEC /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,8 @@
 		4F9311072AD0325E00D7D581 /* RentalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentalCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F999E982AD69242006AFAEC /* Array+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extensions.swift"; sourceTree = "<group>"; };
 		4F999E9A2AD69C03006AFAEC /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConstants.swift; sourceTree = "<group>"; };
+		4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9310EC2ACD52B800D7D581 /* SimpleLogger in Frameworks */,
+				4F999E9E2AD6A951006AFAEC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +158,7 @@
 		4F9310DE2ACD4FC000D7D581 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				4F999E9F2AD6A9B2006AFAEC /* networking */,
 				4F9310AE2ACD4CF000D7D581 /* AppDelegate.swift */,
 				4F9310E32ACD50D300D7D581 /* data */,
 				4F9310E22ACD50CC00D7D581 /* domain */,
@@ -261,6 +268,15 @@
 			path = "custom-ui";
 			sourceTree = "<group>";
 		};
+		4F999E9F2AD6A9B2006AFAEC /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				4F999EA02AD6AA6E006AFAEC /* WebServiceConstants.swift */,
+				4F999EA22AD6ACC0006AFAEC /* WebServiceError.swift */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,6 +295,7 @@
 			name = Rentals;
 			packageProductDependencies = (
 				4F9310EB2ACD52B800D7D581 /* SimpleLogger */,
+				4F999E9D2AD6A951006AFAEC /* Alamofire */,
 			);
 			productName = Rentals;
 			productReference = 4F9310AB2ACD4CF000D7D581 /* Rentals.app */;
@@ -354,6 +371,7 @@
 			mainGroup = 4F9310A22ACD4CF000D7D581;
 			packageReferences = (
 				4F9310EA2ACD52B800D7D581 /* XCRemoteSwiftPackageReference "SimpleLogger" */,
+				4F999E9C2AD6A951006AFAEC /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4F9310AC2ACD4CF000D7D581 /* Products */;
 			projectDirPath = "";
@@ -410,6 +428,8 @@
 				4F9310FC2AD0140800D7D581 /* RootViewControllerFactory.swift in Sources */,
 				4F9310FA2AD00F6E00D7D581 /* UIViewController+extensions.swift in Sources */,
 				4F9311012AD01A3B00D7D581 /* AppError.swift in Sources */,
+				4F999EA32AD6ACC0006AFAEC /* WebServiceError.swift in Sources */,
+				4F999EA12AD6AA6E006AFAEC /* WebServiceConstants.swift in Sources */,
 				4F9311062AD031F400D7D581 /* RentalCollectionViewCell.swift in Sources */,
 				4F9310E82ACD51D000D7D581 /* RootViewController.swift in Sources */,
 				4F999E992AD69242006AFAEC /* Array+extensions.swift in Sources */,
@@ -762,6 +782,14 @@
 				minimumVersion = 2.4.5;
 			};
 		};
+		4F999E9C2AD6A951006AFAEC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thinkaboutiter/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -769,6 +797,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F9310EA2ACD52B800D7D581 /* XCRemoteSwiftPackageReference "SimpleLogger" */;
 			productName = SimpleLogger;
+		};
+		4F999E9D2AD6A951006AFAEC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F999E9C2AD6A951006AFAEC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
