@@ -56,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F14E1D72AE26E0900AFB549 /* App.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = App.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4F9310AB2ACD4CF000D7D581 /* Rentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rentals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9310AE2ACD4CF000D7D581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9310B72ACD4CF300D7D581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F14E1D62AE26DDE00AFB549 /* playground */ = {
+			isa = PBXGroup;
+			children = (
+				4F14E1D72AE26E0900AFB549 /* App.playground */,
+			);
+			path = playground;
+			sourceTree = "<group>";
+		};
 		4F9310A22ACD4CF000D7D581 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +175,7 @@
 		4F9310DE2ACD4FC000D7D581 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				4F14E1D62AE26DDE00AFB549 /* playground */,
 				4F999E9F2AD6A9B2006AFAEC /* networking */,
 				4F9310AE2ACD4CF000D7D581 /* AppDelegate.swift */,
 				4F9310E32ACD50D300D7D581 /* data */,
