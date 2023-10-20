@@ -25,12 +25,15 @@ enum NetworkEntity {
 
     // MARK: - Datum
     struct Datum: Decodable {
-        let id: Int?
+        let id: String?
+        let attributes: DatumAttributes?
+    }
+
+    struct DatumAttributes: Decodable {
         let name: String?
         let primaryImageURL: String?
 
         enum CodingKeys: String, CodingKey {
-            case id
             case name
             case primaryImageURL = "primary_image_url"
         }
@@ -40,7 +43,7 @@ enum NetworkEntity {
 enum AppEntity {
 
     struct Rental {
-        let id: Int
+        let id: String
         let name: String
         let primaryImageUrl: String
 
@@ -50,12 +53,12 @@ enum AppEntity {
             }
             self.id = id
 
-            guard let name = datum.name else {
+            guard let name = datum.attributes?.name else {
                 throw AppEntity.Rental.Error.invalidName
             }
             self.name = name
 
-            guard let primaryImageUrl = datum.primaryImageURL else {
+            guard let primaryImageUrl = datum.attributes?.primaryImageURL else {
                 throw AppEntity.Rental.Error.invalidPrimaryImageUrl
             }
             self.primaryImageUrl = primaryImageUrl
