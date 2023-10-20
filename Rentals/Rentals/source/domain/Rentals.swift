@@ -47,6 +47,12 @@ enum AppEntity {
         let name: String
         let primaryImageUrl: String
 
+        fileprivate init(id: String, name: String, primaryImageUrl: String) {
+            self.id = id
+            self.name = name
+            self.primaryImageUrl = primaryImageUrl
+        }
+
         init(datum: NetworkEntity.Datum) throws {
             guard let id = datum.id else {
                 throw AppEntity.Rental.Error.invalidId
@@ -82,5 +88,11 @@ enum AppEntity {
                 return result
             }
         }
+    }
+}
+
+extension AppEntity.Rental {
+    static func createWith(id: String, name: String, primaryImageUrl: String) -> AppEntity.Rental {
+        return AppEntity.Rental(id: id, name: name, primaryImageUrl: primaryImageUrl)
     }
 }

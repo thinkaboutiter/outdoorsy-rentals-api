@@ -52,27 +52,26 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
         Logger.fatal.message()
     }
 
-    // MARK: - RentalsViewModelConsumer protocol
-
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureSearchBar()
 
-        checkWebService()
+//        checkWebService()
+
+        viewModel.fetchItems()
     }
 
-    private let ws = RentalsWebService()
+//    private let ws = RentalsWebService()
 
-    private func checkWebService() {
-        ws.fetch { resources in
-            Logger.network.message().object(resources)
-        } failure: { error in
-            Logger.error.message().object(error)
-        }
-
-    }
+//    private func checkWebService() {
+//        ws.fetch { resources in
+//            Logger.network.message().object(resources)
+//        } failure: { error in
+//            Logger.error.message().object(error)
+//        }
+//    }
 
     private func configureUI() {
         self.title = NSLocalizedString("Keyword search", comment: "Keyword search")
@@ -81,6 +80,23 @@ class RentalsViewController: UIViewController, RentalsViewModelConsumer {
     private func configureSearchBar() {
         self.navigationItem.searchController = self.searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+
+    // MARK: - RentalsViewModelConsumer protocol
+    func didFinishFetchingRentals(on viewModel: RentalsViewModel) {
+        rentalsCollectionView.reloadData()
+    }
+
+    func didFailFetchingRentals(on viewModel: RentalsViewModel, error: Error) {
+        let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Error"),
+                                                message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: NSLocalizedString("Retry", comment: "Retry"),
+                                        style: .default) { action in
+            self.viewModel.fetchItems()
+        }
+        alertController.addAction(retryAction)
+        self.present(alertController, animated: true)
     }
 }
 
@@ -129,9 +145,9 @@ extension RentalsViewController: UICollectionViewDataSource {
             Logger.error.message(message)
             return cell
         }
-        cell.configureWithRentalDescription(data)
+        cell.configureWithRentalDescription(data.name)
         let testImage = UIImage(named: "test-rv")
-        cell.configureWithRentalImage(testImage)
+        cell.configureWithRentalImage(data.primaryImageUrl)
         return cell
     }
 }

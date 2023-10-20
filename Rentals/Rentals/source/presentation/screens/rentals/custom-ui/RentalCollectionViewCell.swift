@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RentalCollectionViewCell: UICollectionViewCell {
     static let identifier: String = String(describing: RentalCollectionViewCell.self)
@@ -36,7 +37,8 @@ class RentalCollectionViewCell: UICollectionViewCell {
         rentalDescriptionLabel.text = rentalDescription
     }
 
-    func configureWithRentalImage(_ rentalImage: UIImage?) {
-        rentalImageView.image = rentalImage
+    func configureWithRentalImage(_ rentalImageUrl: String) {
+
+//        rentalImageView.image = rentalImage
     }
 }
